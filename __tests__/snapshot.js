@@ -1,5 +1,4 @@
 const renderer = require('react-test-renderer');
-// const TestUtils = require('react-addons-test-utils');
 const Login = require('../src/login');
 const React = require('react');
 
