@@ -1,0 +1,51 @@
+exports[`test Form with errors 1`] = `
+<div>
+  <div>
+    <label>
+      Username:
+    </label>
+    <input
+      onChange={[Function onChange]}
+      onKeyDown={[Function onKeyDown]}
+      value="" />
+  </div>
+  <div>
+    <label>
+      Password:
+    </label>
+    <input
+      onChange={[Function onChange]}
+      onKeyDown={[Function onKeyDown]}
+      type="password"
+      value="" />
+  </div>
+  <p
+    className="error">
+    test error
+  </p>
+</div>
+`;
+
+exports[`test Form with no errors 1`] = `
+<div>
+  <div>
+    <label>
+      Username:
+    </label>
+    <input
+      onChange={[Function onChange]}
+      onKeyDown={[Function onKeyDown]}
+      value="" />
+  </div>
+  <div>
+    <label>
+      Password:
+    </label>
+    <input
+      onChange={[Function onChange]}
+      onKeyDown={[Function onKeyDown]}
+      type="password"
+      value="" />
+  </div>
+</div>
+`;
