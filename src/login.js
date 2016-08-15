@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Login extends Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
 
@@ -35,12 +35,16 @@ class Login extends Component {
           type="password"
         />
       </div>
+      {'error' in this.props &&
+      <p className="error">{this.props.error}</p>
+      }
     </div>
   }
 }
 
 Login.propTypes = {
-  onSubmit: React.PropTypes.func
+  onSubmit: React.PropTypes.func,
+  error: React.PropTypes.node
 };
 
 module.exports = Login;

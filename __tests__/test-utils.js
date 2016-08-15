@@ -6,10 +6,11 @@ var component;
 
 const components = {
   usernameInput: () => TestUtils.scryRenderedDOMComponentsWithTag(component, 'input')[0],
-  passwordInput: () => TestUtils.scryRenderedDOMComponentsWithTag(component, 'input')[1]
+  passwordInput: () => TestUtils.scryRenderedDOMComponentsWithTag(component, 'input')[1],
+  error: () => TestUtils.scryRenderedDOMComponentsWithClass(component, 'error')[0]
 };
 
-describe('Login', () => {
+describe('Testing with React TestUtils', () => {
   describe('rendering', () => {
     beforeEach(() => {
       component = TestUtils.renderIntoDocument(<Login/>);
@@ -25,6 +26,23 @@ describe('Login', () => {
 
     it('should render a password input', () => {
       expect(components.passwordInput()).toBeTruthy();
+    });
+
+    it('should not show any errors', () => {
+      expect(components.error()).not.toBeTruthy();
+    });
+
+    describe('when there is an error', () => {
+      const error = 'username or password is incorrect';
+
+      beforeEach(() => {
+        component = TestUtils.renderIntoDocument(<Login error={error}/>)
+      });
+
+      it('should show the error', () => {
+        expect(components.error()).toBeTruthy();
+        expect(components.error().textContent).toEqual(error);
+      });
     });
   });
 
